@@ -1,8 +1,8 @@
-# EQ Card Logger
+# EQ Visitor Card Logger
 
 A single-page tool for logging NFC card UIDs for the visitor logging project. It runs entirely in the browser. Nothing is uploaded anywhere.
 
-Cards are numbered **EQ V900 to EQ V999** (100 cards). Tap each card on the phone, the UID is saved against the current card number, and the page moves to the next one. When you are done, export the list to Excel.
+By default it logs cards **EQ V900 to EQ V999** (100 cards). Tap each card on the phone, the UID is saved against the current card number, and the page moves to the next one. When you are done, export the list to Excel. The range can be changed in Settings.
 
 **Open the tool:** `https://kira993.github.io/NFC-Reader/index.html`
 
@@ -15,7 +15,7 @@ Open that link in **Chrome on Android** with NFC turned on.
 1. Open the link in Chrome on your Android phone.
 2. Turn on NFC in the phone settings if it is off.
 3. Tap **Start NFC scanning**. Chrome may ask for NFC permission the first time. Allow it.
-4. Hold the card flat against the back of the phone. The big label shows which card is next (starting at EQ V900).
+4. Hold the card flat against the back of the phone. The big label shows which card is next.
 5. Each successful tap saves the UID and moves to the next card. The phone vibrates briefly.
 6. When all cards are done, tap **Export to Excel**. You get an `.xlsx` file with these columns: card number, UID, scan time.
 
@@ -35,6 +35,25 @@ Type or paste a UID into the field and press Enter. A USB or Bluetooth NFC reade
 ### Copy instead of download
 
 **Copy table** puts the whole list on the clipboard. Paste it into Excel starting at cell A1.
+
+---
+
+## Settings
+
+Tap the cog in the top right corner.
+
+- **Card name prefix**, **First number**, **Last number**: define the cards you need. For example, prefix `EQ V`, first `900`, last `999` gives EQ V900 to EQ V999. A different batch could be `EQ V`, `1000` to `1049`.
+- Cards you already saved are kept when you change the range. Cards outside the new range are hidden and left out of the export. They come back if you widen the range again.
+- The range can hold up to 2000 cards.
+- **Logo and site icon**: choose your own logo image. It appears next to the title and is used as the browser tab icon on that device.
+
+Scanning stops when you open Settings. Tap **Start NFC scanning** again after you tap **Done**.
+
+### Showing the logo on every device
+
+Settings only stores the logo on the phone where you chose it. To show a logo for everyone who opens the link, add an image file named `logo.png` to the repository next to `index.html`. The page picks it up automatically, and it also becomes the tab icon. A logo chosen in Settings takes priority on that device.
+
+Use a logo you have the right to use, for example the one from your company's brand resources.
 
 ---
 
@@ -59,6 +78,7 @@ NFC cards do not have a MAC address. What the phone reads is the card's **UID**,
 2. Upload these files to the repository root:
    - `index.html` (the card logger page, named exactly `index.html`)
    - `README.md` (this file)
+   - `logo.png` (optional, your logo)
 3. In the repository, go to **Settings → Pages**.
 4. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
 5. Choose branch **main** and folder **/ (root)**, then click **Save**.
@@ -70,4 +90,4 @@ The page contains no passwords or personal data, and everything is saved on the 
 
 ### Updating the page later
 
-Upload a new `index.html` to the repository, replacing the old one. Pages republishes within a minute or two. Saved progress is kept, because it is tied to the address, not the file version.
+Upload a new `index.html` to the repository, replacing the old one. Pages republishes within a minute or two. Saved progress and settings are kept, because they are tied to the address, not the file version.
