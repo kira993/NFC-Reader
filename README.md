@@ -4,7 +4,7 @@ A single-page tool for logging NFC card UIDs for the visitor logging project. It
 
 Cards are numbered **EQ V900 to EQ V999** (100 cards). Tap each card on the phone, the UID is saved against the current card number, and the page moves to the next one. When you are done, export the list to Excel.
 
-**Open the tool:** `https://YOUR-USERNAME.github.io/YOUR-REPO/`
+**Open the tool:** `https://kira993.github.io/NFC-Reader/index.html`
 
 Open that link in **Chrome on Android** with NFC turned on.
 
