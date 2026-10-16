@@ -1,8 +1,8 @@
-# EQ Visitor Card Logger
+# Celebrity Cruises Visitor Card Logger
 
-A single-page tool for logging NFC card UIDs for the visitor logging project. It runs entirely in the browser. Nothing is uploaded anywhere.
+A single-page tool for logging NFC card UIDs for visitor cards on board. Any ship in the fleet can use it. It runs entirely in the browser. Nothing is uploaded anywhere.
 
-By default it logs cards **EQ V900 to EQ V999** (100 cards). Tap each card on the phone, the UID is saved against the current card number, and the page moves to the next one. When you are done, export the list to Excel. The range can be changed in Settings.
+The settings start at cards **EQ V900 to EQ V999** (100 cards), and each ship can set its own prefix and range. Tap each card on the phone, the UID is saved against the current card number, and the page moves to the next one. When you are done, export the list to Excel. 
 
 **Open the tool:** `https://kira993.github.io/NFC-Reader/index.html`
 
@@ -54,6 +54,12 @@ Scanning stops when you open Settings. Tap **Start NFC scanning** again after yo
 Settings only stores the logo on the phone where you chose it. To show a logo for everyone who opens the link, add an image file named `logo.png` to the repository next to `index.html`. The page picks it up automatically, and it also becomes the tab icon. A logo chosen in Settings takes priority on that device.
 
 Use a logo you have the right to use, for example the one from your company's brand resources.
+
+---
+
+## Using it on other ships
+
+Every ship can open the same link. Each phone keeps its own scans and settings, so open Settings first and enter that ship's card prefix and number range. Export the Excel file from the phone that did the scanning.
 
 ---
 
